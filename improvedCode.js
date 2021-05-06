@@ -21,14 +21,14 @@ const getTrendArray = (integerArray) => {
             uptrend = false;
             firstTrendIndex = (countDown === 1) ? i : firstTrendIndex;
         }
-        if(!uptrend && !downtrend && countUp !== 3 && countDown !== 3){
-          firstTrendIndex = -1
-        }
         if (countDown === 3 || countUp === 3) {
           return [uptrend, downtrend, firstTrendIndex];
         }
         previousInteger = integerArray[i];
 
+    }
+    if(countUp !== 3 && countDown !== 3){
+          firstTrendIndex = -1
     }
     return [uptrend, downtrend, firstTrendIndex];
 }
